@@ -102,8 +102,7 @@ def register(request):
             profile.user = user
             profile.save()
             registered = True
-            if profile.is_lecturer is True:
-                return redirect(reverse('course_feedback:login'))
+            return redirect(reverse('course_feedback:login'))
         else:
             print(user_form.errors, profile_form.errors)
     else:
